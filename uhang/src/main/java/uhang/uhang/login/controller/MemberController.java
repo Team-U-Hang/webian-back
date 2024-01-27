@@ -1,25 +1,19 @@
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//
-//@RestController
-//@RequestMapping("/api/members")
-//public class MemberController {
-//
-//    @Autowired
-//    private MemberService memberService;
-//
-//    @PostMapping("/register")
-//    public Member registerMember(@RequestBody MemberRegistrationRequest request) {
-//        return memberService.registerMember(request.getEmail(), request.getPassword(), request.getStudentId());
-//    }
-//
-//    @PostMapping("/login")
-//    public Member login(@RequestBody MemberLoginRequest request) {
-//        return memberService.login(request.getEmail(), request.getPassword());
-//    }
-//
-//    // 추가적인 엔드포인트가 필요하다면 여기에 추가
-//}
+package uhang.uhang.login.controller;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import uhang.uhang.login.dto.requestDto;
+import uhang.uhang.login.service.MemberService;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/v1/member")
+public class MemberController {
+    private final MemberService memberService;
+
+    @PostMapping("/join")
+    public int memberjoin (@RequestBody requestDto dto) {
+        return memberService.join(dto);
+    }
+}
