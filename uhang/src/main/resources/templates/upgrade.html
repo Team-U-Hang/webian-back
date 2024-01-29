@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<td>
+    <button type="button" class="py-0 btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal">메일 전송
+    </button>
+</td>
+
+
+Hello
+<a href="/upgrade">upgrade</a>
+</body>
+</html>
+
+<!-- 버튼 클릭시 모달 생김 -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <!-- modal-sm modal-lg modal-xl 모달 사이즈 -->
+        <!-- modal-dialog-centered 화면 가운데 -->
+        <!-- modal-dialog-scrollable 스크롤 기능 -->
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- modal-sm modal-lg modal-xl 모달 사이즈 -->
+                <h1>메일 발송</h1>
+                <form action="/upgrade" method="post">
+                    <input name="address" placeholder="이메일 주소" class="form-control" value=""> <br>
+                    <input name="title" placeholder="제목" class="form-control"> <br>
+                    <textarea name="message" placeholder="메일 내용을 입력해주세요."
+                              cols="60" rows="20" class="form-control"></textarea>
+                    <button type="submit" class="btn btn-primary mt-2">발송</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
