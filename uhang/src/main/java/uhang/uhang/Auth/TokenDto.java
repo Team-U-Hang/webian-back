@@ -1,12 +1,14 @@
 package uhang.uhang.Auth;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class TokenDto {
-    private String token;
+    private String accessToken;
 }

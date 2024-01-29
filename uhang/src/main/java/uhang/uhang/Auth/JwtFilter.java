@@ -1,50 +1,49 @@
 package uhang.uhang.Auth;
-
-import jakarta.servlet.*;
+import io.jsonwebtoken.ExpiredJwtException;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
-import org.springframework.web.filter.GenericFilterBean;
-
+import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @RequiredArgsConstructor
-public class JwtFilter extends GenericFilterBean {
-    private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
-    public static final String AUTHORIZATION_HEADER = "Authorization";
-    private final TokenProvider tokenProvider;
+public class JwtFilter extends OncePerRequestFilter {
+    private static final String SUCCESS = "success";
+    private static final String EXPIRED = "expired";
+    private static final String DENIED = "denied";
+    private final JwtProvider jwtProvider;
+    private final static String[] AUTH_WHITE_LIST_IGNORE = {
+            "/sign-up"
+            ,"/log-in"
+    };
 
-    // 실제 필터릴 로직
-    // 토큰의 인증정보를 SecurityContext에 저장하는 역할 수행
+
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        String jwt = resolveToken(httpServletRequest);
-        String requestURI = httpServletRequest.getRequestURI();
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response
+            , FilterChain filterChain) throws ServletException, IOException {
+        System.out.println("doing jwtFilter");
+        try {
+            String accessToken = jwtProvider.resolveToken(request, HttpHeaders.AUTHORIZATION);
+            Authentication authentication = jwtProvider.getAuthentication(accessToken);
 
-        if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
-            Authentication authentication = tokenProvider.getAuthentication(jwt);
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            logger.debug("Security Context에 '{}' 인증 정보를 저장했습니다, uri: {}", authentication.getName(), requestURI);
-        } else {
-            logger.debug("유효한 JWT 토큰이 없습니다, uri: {}", requestURI);
+            // access token 검증
+            if (StringUtils.hasText(accessToken) && jwtProvider.validateToken(accessToken).equals(SUCCESS)) {
+                SecurityContextHolder.getContext().setAuthentication(authentication); // security context에 인증 정보 저장
+            }
+        } catch (ExpiredJwtException e) {
+            //throw JwtException
+            request.setAttribute("exception",EXPIRED);
+        } catch (IllegalArgumentException  e) {
+            //throw JwtException
+            request.setAttribute("exception",DENIED);
         }
-
-        filterChain.doFilter(servletRequest, servletResponse);
+        filterChain.doFilter(request, response);
     }
 
-    // Request Header 에서 토큰 정보를 꺼내오기 위한 메소드
-    private String resolveToken(HttpServletRequest request) {
-        String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
-
-        if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            return bearerToken.substring(7);
-        }
-
-        return null;
-    }
 }
