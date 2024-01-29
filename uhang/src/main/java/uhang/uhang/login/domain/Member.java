@@ -4,16 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
-@Entity
+@Entity (name="members")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="members")
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
     private int memberId;
 
     @Column(updatable = false, length = 8)
@@ -28,4 +26,8 @@ public class Member {
     @Column(nullable = false)
     @ColumnDefault("'YES'")
     private int writeAuth;
+
 }
+
+
+
