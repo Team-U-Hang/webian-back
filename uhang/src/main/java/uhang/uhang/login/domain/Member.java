@@ -1,23 +1,31 @@
-//package uhang.uhang.login.domain;
-//
-//import jakarta.persistence.*;
-//import lombok.Getter;
-//import uhang.uhang.posting.domain.entity.Post;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//@Entity(name = "members")
-//@Getter
-//public class Member {
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "member_id")
-//    private String memberEmail;
-//    private String memberPw;
-//    private int writeAuth;
-//    private Long studNum;
-//    @OneToMany(mappedBy = "memberId")
-//    private List<Post> posts = new ArrayList<>();
-//
-//}
+
+package uhang.uhang.login.domain;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+
+@Entity (name="members")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Member {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int memberId;
+
+    @Column(updatable = false, length = 8)
+    private String studNum;
+
+    @Column( updatable = false, length = 50)
+    private String memberEmail;
+
+    @Column(updatable = false, length = 20)
+    private String memberPw;
+
+    @Column(nullable = false)
+    @ColumnDefault("'YES'")
+    private int writeAuth;
+
+}
