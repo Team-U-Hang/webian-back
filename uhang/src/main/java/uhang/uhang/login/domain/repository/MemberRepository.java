@@ -1,3 +1,4 @@
+
 package uhang.uhang.login.domain.repository;
 
 import jakarta.persistence.EntityManager;
@@ -14,3 +15,4 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     public Member findByMemberEmail(String memberEmail);
     public boolean existsByMemberEmail(String email);
 }
+

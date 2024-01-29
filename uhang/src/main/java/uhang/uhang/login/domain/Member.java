@@ -1,3 +1,4 @@
+
 package uhang.uhang.login.domain;
 
 import jakarta.persistence.*;
@@ -28,6 +29,3 @@ public class Member {
     private int writeAuth;
 
 }
-
-
-
