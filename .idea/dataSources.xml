@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="UhangTest@db-uhang.c9862quyunza.ap-northeast-2.rds.amazonaws.com" uuid="864255e6-1e40-48bc-bff9-cbf4838fe08d">
+    <data-source source="LOCAL" name="db-uhang.c9862quyunza.ap-northeast-2.rds.amazonaws.com" uuid="d59b1699-7683-4d1b-bdec-1985f76eedba">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://db-uhang.c9862quyunza.ap-northeast-2.rds.amazonaws.com:3306/UhangTest</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
