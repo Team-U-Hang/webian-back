@@ -1,25 +1,43 @@
-name: deploy
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-# Controls when the workflow will run
+name: Java CI with Gradle
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:
-      - main
+    branches: [ "deploy" ]
 
+
+permissions:
+  contents: read
 
 jobs:
-  SSH:
-    runs-on: ubuntu-latest
+  build:
 
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: ssh to ec2
-        uses: appleboy/ssh-action@master
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          host: ${{ secrets.HOST }} 
-          username: ${{ secrets.USER }} 
-          script: |
-            cd Github/
-            git pull
+# 디렉토리 생성
+    - name: Make Directory
+      run: mkdir -p deploy
+
+    # Jar 파일 복사
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./deploy
+
+    # 파일 압축
+    - name: Make zip file
+      run: zip -r ./uhangbk.zip ./deploy
+
+    # Deploy
+    - name: Deploy
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: ap-northeast-2
+
+    - name: Upload to S3
+      run: aws s3 cp --region ap-northeast-2 --acl private ./uhangbk.zip s3://uhangbk/
