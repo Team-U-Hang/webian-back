@@ -27,12 +27,12 @@ jobs: # 병렬로 실행되는 작업 단위, 여러 step으로 이루어짐
     
     # ./gradlw 실행 권한 부여
     - name: Grant execute permission for gradlew
-      run: chmod +x ./uhang/gradlew
+      run: chmod +x ./gradlew
       shell: bash
 
     # 프로젝트 build
     - name: Build with Gradle
-      run: ./uhang/gradlew clean build -x test
+      run: ./gradlew clean build -x test
       shell: bash
      # 프로젝트 압축
     - name: Make zip file
