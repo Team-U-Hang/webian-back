@@ -30,14 +30,6 @@ jobs: # 병렬로 실행되는 작업 단위, 여러 step으로 이루어짐
       run: chmod +x ./gradlew
       shell: bash
 
-     ##   create env file
-    - name: create env file
-      run: |
-          cd ./src/main/resources
-          touch security.properties
-          echo "${{ secrets.PROPERTIES }}" > security.properties
-      
-
       # 프로젝트 build
     - name: Build with Gradle
       run: ./gradlew clean build -x test
@@ -46,8 +38,17 @@ jobs: # 병렬로 실행되는 작업 단위, 여러 step으로 이루어짐
     - name: Make zip file
       run: zip -r ./$GITHUB_SHA.zip .
       shell: bash
-    
-    # AWS 권한 확인
+
+      ##   create env file
+    - name: create env file
+      run: |
+        cd ./src/main/resources
+        touch security.properties
+        echo "${{ secrets.PROPERTIES }}" > security.properties
+      
+      
+
+      # AWS 권한 확인
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
