@@ -4,7 +4,7 @@ on: # Workflow를 자동으로 트리거 하기 위한 이벤트
   release:
     types: [push] # push를 하면 자동으로 실행
   push:
-    branches: [server] # master 브랜치에서 동작
+    branches: [serveristhis] # master 브랜치에서 동작
     
 env:
   S3_BUCKET_NAME: uhangbk
