@@ -1,9 +1,9 @@
-REPOSITORY=/home/ubuntu/webian-back
+REPOSITORY=/home/ubuntu/app
 cd $REPOSITORY
 
 APP_NAME=Uhang
 
-JAR_NAME=/home/ec2-user/app/build/libs/backend-0.0.1-SNAPSHOT.jar
+JAR_NAME=/home/ubuntu/app/build/libs/backend-0.0.1-SNAPSHOT.jar
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
 CURRENT_PID=$(pgrep -f java)
@@ -18,4 +18,4 @@ else
 fi
 
 echo "> $JAR_PATH 배포" #3
-nohup java -jar $JAR_NAME > /home/ec2-user/nohup.out 2> /dev/null &
+nohup java -jar $JAR_NAME > /home/ubuntu/nohup.out 2> /dev/null &
