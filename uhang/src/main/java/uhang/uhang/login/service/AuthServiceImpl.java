@@ -42,6 +42,7 @@ public class AuthServiceImpl implements AuthService{
         memberRepository.save(member);
     }
 
+
     @Transactional
     public TokenDto loginUser(loginDto dto) {
         String email = dto.getMemberEmail();
