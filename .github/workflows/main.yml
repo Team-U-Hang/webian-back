@@ -44,7 +44,7 @@ jobs: # 병렬로 실행되는 작업 단위, 여러 step으로 이루어짐
       shell: bash
      # 프로젝트 압축
     - name: Make zip file
-      run: zip -r ./practice-deploy.zip .
+      run: zip -r ./GITHUB_SHA.zip .
       shell: bash
     
     # AWS 권한 확인
