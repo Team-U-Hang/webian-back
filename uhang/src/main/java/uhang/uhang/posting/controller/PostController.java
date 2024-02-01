@@ -3,11 +3,10 @@ package uhang.uhang.posting.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import uhang.uhang.posting.domain.entity.Post;
+import uhang.uhang.posting.dto.PostDTO;
 import uhang.uhang.posting.service.PostService;
 
 import java.util.List;
@@ -35,4 +34,13 @@ public class PostController {
         List<Post> posts = postService.getAllPosts();
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
+
+    // 게시글 상세 정보 조회
+    @GetMapping("/posts/{eventId}")
+    public String showPostDetails(@PathVariable Long eventId, Model model) {
+        PostDTO postDTO = postService.getPostDTOById(eventId);
+        model.addAttribute("post", postDTO);
+        return "posts/details";
+    }
+
 }
