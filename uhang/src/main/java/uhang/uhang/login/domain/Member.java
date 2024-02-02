@@ -4,8 +4,14 @@ package uhang.uhang.login.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+import org.springframework.aot.hint.MemberCategory;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity (name="members")
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity (name="member")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +19,8 @@ import org.hibernate.annotations.ColumnDefault;
 @Setter
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int memberId;
+    @Column(name = "member_id")
+    private Long memberId;
 
     @Column(updatable = false, length = 8)
     private String studNum;
@@ -28,4 +35,17 @@ public class Member {
     @ColumnDefault("'YES'")
     private int writeAuth;
 
+
+    //yejin
+  //  public Member(int memberId) {
+    //    this.memberId = memberId;
+    //}
+    /*
+    @OneToMany(mappedBy = "member")
+    private List<MemberCategory> memberProducts= new ArrayList<>();;
+*/
+
+    public interface MemberDetails extends UserDetails {
+        Long getMemberId();
+    }
 }

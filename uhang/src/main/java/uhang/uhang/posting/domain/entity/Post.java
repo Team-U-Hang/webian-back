@@ -25,7 +25,7 @@ public class Post {
     private LocalTime eventTime;
     private LocalDate eventDate;
     private String eventLoc;
-    private int eventType;
+    private int categoryId;
     private String eventText;
     private URI imageUrl;
     private LocalDateTime timeStamp;
@@ -37,14 +37,14 @@ public class Post {
     // member builder에도 추가해주기
     @Builder
     public Post(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
-                String eventLoc, int eventType, String eventText, URI imageUrl,
+                String eventLoc, int categoryId, String eventText, URI imageUrl,
                 LocalDateTime timeStamp, Integer totalLike) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
         this.eventLoc = eventLoc;
-        this.eventType = eventType;
+        this.categoryId = categoryId;
         this.eventText = eventText;
         this.imageUrl = imageUrl;
         this.timeStamp = timeStamp;
