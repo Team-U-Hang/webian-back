@@ -2,9 +2,8 @@ package uhang.uhang.commentlike.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import uhang.uhang.comments.Comment;
+import uhang.uhang.comments.domain.Comment;
 import uhang.uhang.login.domain.Member;
-import uhang.uhang.posting.domain.entity.Post;
 
 import static jakarta.persistence.FetchType.LAZY;
 

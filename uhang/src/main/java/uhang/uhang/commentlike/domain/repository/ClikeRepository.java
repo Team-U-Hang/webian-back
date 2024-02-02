@@ -2,7 +2,7 @@ package uhang.uhang.commentlike.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import uhang.uhang.commentlike.domain.CommentLike;
-import uhang.uhang.comments.Comment;
+import uhang.uhang.comments.domain.Comment;
 import uhang.uhang.login.domain.Member;
 
 import java.util.Optional;

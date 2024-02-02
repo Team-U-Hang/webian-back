@@ -3,20 +3,14 @@ package uhang.uhang.interest.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import uhang.uhang.exception.LogInRequiredException;
+import uhang.uhang.comments.domain.exception.LogInRequiredException;
 import uhang.uhang.interest.service.InterestCategoryService;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
-import uhang.uhang.util.SecurityUtil;
 
 import java.util.List;
-import uhang.uhang.util.SecurityUtil;
-import uhang.uhang.interest.service.InterestCategoryService;
 
 
 @RestController

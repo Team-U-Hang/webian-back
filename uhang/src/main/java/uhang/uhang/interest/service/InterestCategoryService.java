@@ -5,7 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uhang.uhang.exception.LogInRequiredException;
+import uhang.uhang.comments.domain.exception.LogInRequiredException;
 import uhang.uhang.interest.domain.Category;
 import uhang.uhang.interest.domain.InterestCategory;
 import uhang.uhang.interest.domain.repository.CategoryRepository;

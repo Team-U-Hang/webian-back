@@ -2,25 +2,18 @@ package uhang.uhang.commentlike.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import uhang.uhang.commentlike.domain.CommentLike;
 import uhang.uhang.commentlike.domain.repository.ClikeRepository;
 import uhang.uhang.commentlike.dto.ClikeDto;
-import uhang.uhang.comments.Comment;
-import uhang.uhang.comments.CommentRepository;
-import uhang.uhang.exception.LogInRequiredException;
-import uhang.uhang.exception.NoLikeException;
-import uhang.uhang.exception.NotFoundException;
-import uhang.uhang.exception.YESLikeException;
+import uhang.uhang.comments.domain.Comment;
+import uhang.uhang.comments.domain.CommentRepository;
+import uhang.uhang.comments.domain.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
-import uhang.uhang.posting.domain.entity.Post;
 
 import java.util.Optional;
-
-import static org.springframework.util.ClassUtils.isPresent;
 
 @Service
 @RequiredArgsConstructor
