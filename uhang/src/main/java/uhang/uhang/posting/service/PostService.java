@@ -23,12 +23,12 @@ public class PostService {
         return postRepository.findAll(pageable);
     }
 
-    public List<Post> getPostsByCategoryIds(List<Integer> eventTypes) {
-        return postRepository.findByCategoryIdIn(eventTypes);
+    public List<Post> getPostsByEventTypes(List<Integer> eventTypes) {
+        return postRepository.findByEventTypeIn(eventTypes);
     }
 
-    public Page<Post> getPostsByCategoryIds(List<Integer> eventTypes, Pageable pageable) {
-        return postRepository.findByCategoryIdIn(eventTypes, pageable);
+    public Page<Post> getPostsByEventTypes(List<Integer> eventTypes, Pageable pageable) {
+        return postRepository.findByEventTypeIn(eventTypes, pageable);
     }
 
     public Post savePost(Post post) {

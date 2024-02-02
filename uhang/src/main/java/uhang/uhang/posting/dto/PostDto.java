@@ -22,7 +22,7 @@ public class PostDto {
     private LocalTime eventTime;
     private LocalDate eventDate;
     private String eventLoc;
-    private int categoryId;
+    private int eventType;
     private String eventText;
     private URI imageUrl;
     private LocalDateTime timeStamp;
@@ -36,7 +36,7 @@ public class PostDto {
                 .eventTime(eventTime)
                 .eventDate(eventDate)
                 .eventLoc(eventLoc)
-                .categoryId(categoryId)
+                .eventType(eventType)
                 .eventText(eventText)
                 .imageUrl(imageUrl)
                 .timeStamp(timeStamp)
@@ -49,14 +49,14 @@ public class PostDto {
     // member builder에도 추가해주기
     @Builder
     public PostDto(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
-                   String eventLoc, int categoryId, String eventText, URI imageUrl,
+                   String eventLoc, int eventType, String eventText, URI imageUrl,
                    LocalDateTime timeStamp, Integer totalLike) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
         this.eventLoc = eventLoc;
-        this.categoryId = categoryId;
+        this.eventType = eventType;
         this.eventText = eventText;
         this.imageUrl = imageUrl;
         this.timeStamp = timeStamp;

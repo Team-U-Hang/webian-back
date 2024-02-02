@@ -13,7 +13,9 @@ import uhang.uhang.interest.domain.repository.InterestCategoryRepository;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -37,6 +39,9 @@ public class InterestCategoryService {
     @Autowired
     private InterestCategoryRepository interestCategoryRepository;
 
+
+
+
     @Transactional
     public void saveInterestCategory(Long memberId,List<Integer> categoryIds) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -55,5 +60,23 @@ public class InterestCategoryService {
             interestCategoryRepository.save(interestCategory);
         }
     }
+        public List<Integer> getDefaultInterestCategories(Long memberId){
+            List<InterestCategory> userInterestCategories = interestCategoryRepository.findByMember_MemberId(memberId);
+
+            if (userInterestCategories.isEmpty()) {
+                // 사용자의 관심 카테고리가 없을 경우 디폴트로 지정한 카테고리 ID 목록 반환
+                return Arrays.asList(1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+
+            } else {
+                // 사용자의 관심 카테고리가 있을 경우 해당 카테고리 ID 목록 반환  //!
+                return userInterestCategories.stream()
+                        .map(category -> category.getCategory().getCategoryId().intValue())
+                        .collect(Collectors.toList());
+            }
+        }
+
+
+
+
 
 }

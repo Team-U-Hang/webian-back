@@ -9,6 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post> findByCategoryIdIn(List<Integer> eventTypes);
-    Page<Post> findByCategoryIdIn(List<Integer> eventTypes, Pageable pageable);
+    List<Post> findByEventTypeIn(List<Integer> eventTypes);
+    Page<Post> findByEventTypeIn(List<Integer> eventTypes, Pageable pageable);
 }
