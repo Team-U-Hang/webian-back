@@ -3,11 +3,13 @@ package uhang.uhang.posting.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import uhang.uhang.review.domain.entity.Review;
 
 import java.net.URI;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity(name = "posts")
 @Getter
@@ -30,6 +32,10 @@ public class Post {
 //    @JoinColumn(name = "member_id")
 //    private Member member;
     private Integer totalLike;
+
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OrderBy("commentId asc")
+    private List<Review> reviews;
 
     // member builder에도 추가해주기
     @Builder

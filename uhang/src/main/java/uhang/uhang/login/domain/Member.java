@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
-@Entity (name="members")
+@Entity (name="member")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

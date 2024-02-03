@@ -2,6 +2,7 @@ package uhang.uhang.posting.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import uhang.uhang.posting.domain.entity.Post;
 
 import java.net.URI;
@@ -14,6 +15,7 @@ import java.time.LocalTime;
 public class PostRequestDto {
     private String eventTitle;
     private LocalTime eventTime;
+    @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDate eventDate;
     private String eventLoc;
     private int eventType;
