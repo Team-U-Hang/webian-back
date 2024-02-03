@@ -87,7 +87,7 @@ public class PostController {
     public ResponseEntity<Page<Post>> getPostsByCategoryIds(
 
             @RequestParam(required = false) List<Integer> eventType,
-            // 추가된 부분
+
             @RequestParam(defaultValue = "0") int page,
 
             @RequestParam(defaultValue = "6") int size,
@@ -96,7 +96,7 @@ public class PostController {
         Member member = getCurrentMember();
         {
 
-            // 기존 코드 유지
+
 
             Page<Post> postsPage;
             if (eventType == null || eventType.isEmpty()) {

@@ -25,7 +25,7 @@ public class Post {
 
     private String eventTitle;
     private LocalTime eventTime;
-    @DateTimeFormat(pattern = "yyyy.MM.dd")
+
     private LocalDate eventDate;
     private String eventLoc;
     private int eventType;

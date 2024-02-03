@@ -46,6 +46,20 @@ public class InterestCategoryController {
                 return new ResponseEntity<>("관심 카테고리 저장에 실패했습니다. " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
+
+    //관심분야 리스트
+    @GetMapping("/mine")
+    public List<Integer> getUserInterestCategories() {
+        Member member = getCurrentMember();
+        Long memberId = member.getMemberId();
+
+        // 사용자의 관심 카테고리 반환
+        return interestCategoryService.getDefaultInterestCategories(memberId);
+    }
+
+
 }
+
+
 
 

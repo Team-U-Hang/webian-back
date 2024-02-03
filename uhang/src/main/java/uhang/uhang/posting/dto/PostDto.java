@@ -4,6 +4,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 //import uhang.uhang.login.domain.Member;
+import org.springframework.format.annotation.DateTimeFormat;
 import uhang.uhang.posting.domain.entity.Post;
 
 import java.net.URI;
@@ -20,6 +21,7 @@ public class PostDto {
 
     private String eventTitle;
     private LocalTime eventTime;
+    @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDate eventDate;
     private String eventLoc;
     private int eventType;
