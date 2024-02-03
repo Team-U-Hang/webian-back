@@ -1,12 +1,23 @@
 package uhang.uhang.review.service;
 
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import uhang.uhang.review.domain.repository.ReviewRepository;
+import uhang.uhang.exception.LogInRequiredException;
+import uhang.uhang.login.domain.Member;
+import uhang.uhang.login.domain.repository.MemberRepository;
+import uhang.uhang.login.service.AuthServiceImpl;
+import uhang.uhang.posting.domain.entity.Post;
+import uhang.uhang.posting.domain.repository.PostRepository;
 import uhang.uhang.review.domain.entity.Review;
+import uhang.uhang.review.domain.repository.ReviewRepository;
 import uhang.uhang.review.dto.ReviewDTO;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReviewService {
@@ -26,5 +37,11 @@ public class ReviewService {
     // 후기 조회
     public List<Review> getAllReviews() {
         return reviewRepository.findAll();
+    }
+
+    //댓글별 좋아요 개수 조회할때, 어떤 댓글인지 알기위해 작성한 메서드
+    public Review findById(int commentId) {
+        Optional<Review> optionalReview = reviewRepository.findById(commentId);
+        return optionalReview.orElse(null);
     }
 }

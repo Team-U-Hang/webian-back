@@ -2,34 +2,41 @@ package uhang.uhang.review.domain.entity;
 
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import uhang.uhang.login.domain.Member;
+import uhang.uhang.posting.domain.entity.Post;
 
 import java.net.URI;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+import static jakarta.persistence.FetchType.LAZY;
+
 @Entity(name = "comments")
-@Getter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reviewId;
+    private int commentId;
 
-    @Column(name = "event_id", nullable = false)
-    private Long eventId;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name="event_id")
+    private Post post;
 
-    @Column(name = "review_rate", nullable = false)
+    @Column
+    private String commentContent;
+
+    @Column
     private Integer reviewRate;
 
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name="member_id")
+    private Member member;
 
-    @Builder
-    public Review(Long reviewId, Long eventId, Integer reviewRate) {
-        this.reviewId = reviewId;
-        this.eventId = eventId;
-        this.reviewRate = reviewRate;
-    }
+
 }

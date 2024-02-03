@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import uhang.uhang.exception.DuplicateEmail;
 import uhang.uhang.exception.LogInFailureEmail;
 import uhang.uhang.exception.LogInFailurePassword;
+import uhang.uhang.exception.LogInRequiredException;
 
 @RestControllerAdvice
 public class Advice {
@@ -25,6 +26,13 @@ public class Advice {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public Response loginFailurePasswordResponse() {
         return Response.failure(HttpStatus.UNAUTHORIZED, "비밀번호가 일치하지 않습니다.");
+    }
+
+
+    @ExceptionHandler(LogInRequiredException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public Response NotFoundExceptionResponse() {
+        return Response.failure(HttpStatus.UNAUTHORIZED, "회원/기타 정보 없음");
     }
 
 }
