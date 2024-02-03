@@ -41,8 +41,8 @@ public class PostController {
     }
 
 
-    // 이벤트 게시물 조회
-    /*
+    // 이벤트 게시물 전체 조회
+
 
     @GetMapping("posts")
     public ResponseEntity<List<Post>> getAllPosts() {
@@ -50,7 +50,7 @@ public class PostController {
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
-*/
+
 
 /*
     @GetMapping("posting")

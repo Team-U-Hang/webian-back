@@ -31,8 +31,8 @@ public class PostService {
         this.memberRepository = memberRepository;
     }
 
-    public Page<Post> getAllPosts(Pageable pageable) {
-        return postRepository.findAll(pageable);
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
     }
 
 
