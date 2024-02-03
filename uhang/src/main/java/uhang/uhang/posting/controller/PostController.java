@@ -31,7 +31,7 @@ public class PostController {
 
 
     // 이벤트 게시물 조회
-    @GetMapping("posting/{eventId}")
+    @GetMapping("post/{eventId}")
     public PostResponseDto getPost(@PathVariable(name="eventId") Long eventId) {
         return postService.getPostById(eventId);
     }
