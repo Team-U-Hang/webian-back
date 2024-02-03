@@ -10,5 +10,8 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
     public Comment findByCommentId(int commentId);
     List<Comment> findByMember(Member member);
+    /*
 
+    public  Member findByMemberEmail(Member member);
+*/
 }

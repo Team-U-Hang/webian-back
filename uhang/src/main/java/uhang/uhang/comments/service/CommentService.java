@@ -35,6 +35,15 @@ public class CommentService {
         }
         return member;
     }
+    /*
+
+    public Member getCurrentMemberEmail(){
+        Member currentMember = getCurrentMember();
+        return commentRepository.findByMemberEmail(currentMember);
+
+    }
+
+     */
 
     public List<Comment> getCommentsByCurrentMember() {
         Member currentMember = getCurrentMember();

@@ -110,5 +110,10 @@ public class PostController {
         }
     }
 
+    @GetMapping("/liked/current")
+    public List<Post> getLikedPostsByCurrentMember() {
+        return postService.getLikedPostsByCurrentMember();
+    }
+
 
 }
