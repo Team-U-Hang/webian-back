@@ -1,6 +1,7 @@
 package uhang.uhang.posting.domain.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -25,9 +26,10 @@ public class Post {
 
     private String eventTitle;
     private LocalTime eventTime;
-
+    @JsonFormat(pattern = "yyyy.MM.dd")
     private LocalDate eventDate;
     private String eventLoc;
+
     private int eventType;
     private String eventText;
     private URI imageUrl;
