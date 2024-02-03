@@ -37,6 +37,7 @@ public class PostController {
     // 이벤트 게시글 등록
     @PostMapping("posts")
     public Post createPost(@RequestBody Post post) {
+
         return postService.savePost(post);
     }
 

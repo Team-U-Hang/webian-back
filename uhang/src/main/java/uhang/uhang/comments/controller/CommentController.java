@@ -26,6 +26,7 @@ public class CommentController {
 
     @GetMapping("/my-comments")
     public List<Comment> getCommentsByCurrentMember() {
+
         return commentService.getCommentsByCurrentMember();
     }
 }
