@@ -7,6 +7,7 @@ import uhang.uhang.login.domain.Member;
 
 import java.net.URI;
 
+import static jakarta.persistence.FetchType.LAZY;
 
 
 @NoArgsConstructor
@@ -20,6 +21,10 @@ public class Upgrade {
     @Column(name = "gid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int gId;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name="member_id")
+    private Member member;
 
     @Column(name = "gname")
     private String gName;
@@ -36,13 +41,12 @@ public class Upgrade {
     private URI gImageUrl;
 
     @Builder
-    public Upgrade(int gId, String gName, String gIntro, URI gImageUrl) {
-        this.gId=gId;
-        this.gName=gName;
-        this.gIntro=gIntro;
+    public Upgrade(int gId, Member member, String gName, String gIntro, URI gImageUrl) {
+        this.gId = gId;
+        this.member = member;
+        this.gName = gName;
+        this.gIntro = gIntro;
         this.gImageUrl = gImageUrl;
-
-
     }
 
 

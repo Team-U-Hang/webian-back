@@ -24,7 +24,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int commentId;
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne
     @JoinColumn(name="event_id")
     private Post post;
 
@@ -34,7 +34,7 @@ public class Review {
     @Column
     private Integer reviewRate;
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne
     @JoinColumn(name="member_id")
     private Member member;
 

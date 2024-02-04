@@ -1,6 +1,8 @@
 package uhang.uhang.upgrade.dto;
 
 import lombok.*;
+import uhang.uhang.login.domain.Member;
+import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.upgrade.domain.Upgrade;
 
 import java.net.URI;
@@ -12,14 +14,19 @@ import java.net.URI;
 @NoArgsConstructor
 public class UpgradeDto {
     private int gId;
+    private Long memberId;
     private String gName;
     private String gIntro;
     private URI gImageUrl;
 
+
     //private String gImage;
-    public Upgrade toEntity(){
+
+    @Builder
+    public Upgrade toEntity() {
         Upgrade build = Upgrade.builder()
                 .gId(gId)
+                .member(Member.builder().memberId(memberId).build()) // Member 엔티티를 직접 넣어줍니다.
                 .gName(gName)
                 .gIntro(gIntro)
                 .gImageUrl(gImageUrl)
@@ -28,8 +35,9 @@ public class UpgradeDto {
     }
 
     @Builder
-    public UpgradeDto(int gId, String gName, String gIntro, URI gImageUrl) {
+    public UpgradeDto(int gId, Long memberId, String gName, String gIntro, URI gImageUrl) { // int에서 Long으로 변경
         this.gId = gId;
+        this.memberId = memberId;
         this.gName = gName;
         this.gIntro = gIntro;
         this.gImageUrl = gImageUrl;
@@ -38,21 +46,10 @@ public class UpgradeDto {
     @Override
     public String toString() {
         return "upgrade{" +
-                "gId= '"+ gId + '\'' +
+                "gId= '" + gId + '\'' +
                 "gName='" + gName + '\'' +
                 ", gIntro='" + gIntro + '\'' +
-                ", gImageUr='" + gImageUrl + '\'' +
-
+                ", gImageUrl='" + gImageUrl + '\'' +
                 '}';
     }
-/*
-    public Article toEntity() {
-        return new Article(null, title, content);
-    }
-    */
-
-
-
-
-
 }

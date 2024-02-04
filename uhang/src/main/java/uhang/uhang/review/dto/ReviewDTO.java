@@ -11,16 +11,23 @@ import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ReviewDTO {
     private Post post;
     private int reviewRate;
     private String commentContent;
+    private int commentId;
+    private Long memberId;
+    private int eventId;
 
-    public static ReviewDTO toDto(Review review) {
-        return new ReviewDTO(
-                review.getPost(),
-                review.getReviewRate(),
-                review.getCommentContent() );
+    // 생성자, 게터, 세터 생략
+
+    @Builder
+    public ReviewDTO(int commentId, String commentContent, Long memberId, int eventId) {
+        this.commentId = commentId;
+        this.commentContent = commentContent;
+        this.memberId = memberId;
+        this.eventId = eventId;
     }
+
+
 }
