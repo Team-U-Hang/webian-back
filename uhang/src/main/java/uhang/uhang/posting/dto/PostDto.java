@@ -1,7 +1,5 @@
 package uhang.uhang.posting.dto;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
 //import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
