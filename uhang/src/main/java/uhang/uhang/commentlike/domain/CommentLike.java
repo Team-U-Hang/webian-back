@@ -2,7 +2,7 @@ package uhang.uhang.commentlike.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import uhang.uhang.comments.domain.Comment;
+import uhang.uhang.comments.domain.Review;
 import uhang.uhang.login.domain.Member;
 
 import static jakarta.persistence.FetchType.LAZY;
@@ -26,5 +26,5 @@ public class CommentLike {
 
     @OneToOne(fetch = LAZY)
     @JoinColumn(name="comment_id")
-    private Comment comment;
+    private Review review;
 }

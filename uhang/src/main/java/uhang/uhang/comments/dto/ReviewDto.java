@@ -2,7 +2,7 @@ package uhang.uhang.comments.dto;
 
 import lombok.Builder;
 
-public class CommentDto {
+public class ReviewDto {
 
     private int commentId;
     private String commentContent;
@@ -11,12 +11,12 @@ public class CommentDto {
 
     // 생성자, 게터, 세터 생략
 
-    public CommentDto() {
+    public ReviewDto() {
         // 기본 생성자
     }
 
     @Builder
-    public CommentDto(int commentId, String commentContent, Long memberId, int eventId) {
+    public ReviewDto(int commentId, String commentContent, Long memberId, int eventId) {
         this.commentId = commentId;
         this.commentContent = commentContent;
         this.memberId = memberId;

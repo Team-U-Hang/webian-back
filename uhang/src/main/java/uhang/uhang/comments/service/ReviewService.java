@@ -3,27 +3,25 @@ package uhang.uhang.comments.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import uhang.uhang.comments.domain.Comment;
-import uhang.uhang.comments.domain.CommentRepository;
-import uhang.uhang.comments.domain.exception.LogInRequiredException;
-import uhang.uhang.comments.dto.CommentDto;
+import uhang.uhang.comments.domain.Review;
+import uhang.uhang.comments.domain.ReviewRepository;
+import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
-public class CommentService {
+public class ReviewService {
 
 
     @Autowired
     private MemberRepository memberRepository;
     @Autowired
-    private CommentRepository commentRepository;
+    private ReviewRepository commentRepository;
 
     @Autowired
-    public CommentService(CommentRepository commentRepository, MemberRepository memberRepository) {
+    public ReviewService(ReviewRepository commentRepository, MemberRepository memberRepository) {
         this.commentRepository = commentRepository;
         this.memberRepository = memberRepository;
     }
@@ -45,7 +43,7 @@ public class CommentService {
 
      */
 
-    public List<Comment> getCommentsByCurrentMember() {
+    public List<Review> getCommentsByCurrentMember() {
         Member currentMember = getCurrentMember();
         return commentRepository.findByMember(currentMember);
     }

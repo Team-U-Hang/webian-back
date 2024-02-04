@@ -1,15 +1,14 @@
 package uhang.uhang.comments.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uhang.uhang.comments.domain.Comment;
 import uhang.uhang.login.domain.Member;
 
 import java.util.List;
 
-public interface CommentRepository extends JpaRepository<Comment, Integer> {
+public interface ReviewRepository extends JpaRepository<Review, Integer> {
 
-    public Comment findByCommentId(int commentId);
-    List<Comment> findByMember(Member member);
+    public Review findByCommentId(int commentId);
+    List<Review> findByMember(Member member);
     /*
 
     public  Member findByMemberEmail(Member member);

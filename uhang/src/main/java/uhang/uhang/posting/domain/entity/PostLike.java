@@ -2,7 +2,6 @@ package uhang.uhang.posting.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import uhang.uhang.comments.domain.Comment;
 import uhang.uhang.login.domain.Member;
 
 @Entity(name = "postlike")

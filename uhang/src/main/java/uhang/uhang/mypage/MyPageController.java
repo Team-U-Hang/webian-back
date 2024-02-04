@@ -7,9 +7,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import uhang.uhang.comments.domain.Comment;
-import uhang.uhang.comments.domain.exception.LogInRequiredException;
-import uhang.uhang.comments.service.CommentService;
+import uhang.uhang.comments.domain.Review;
+import uhang.uhang.exception.LogInRequiredException;
+import uhang.uhang.comments.service.ReviewService;
 import uhang.uhang.interest.service.InterestCategoryService;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
@@ -24,7 +24,7 @@ import java.util.Map;
 @RequestMapping("/mypage")
 public class MyPageController {
 
-    private final CommentService commentService;
+    private final ReviewService reviewService;
     private final PostService postService;
     private final InterestCategoryService interestCategoryService;
     @Autowired
@@ -32,11 +32,11 @@ public class MyPageController {
 
     @Autowired
     public MyPageController(
-            CommentService commentService,
+            ReviewService reviewService,
             PostService postService,
             InterestCategoryService interestCategoryService
     ) {
-        this.commentService = commentService;
+        this.reviewService = reviewService;
         this.postService = postService;
         this.interestCategoryService = interestCategoryService;
     }
@@ -45,7 +45,7 @@ public class MyPageController {
     public ResponseEntity<Map<String, Object>> getMyData() {
         Member currentMember = getCurrentMember();
 
-        List<Comment> myComments = commentService.getCommentsByCurrentMember();
+        List<Review> myReviews = reviewService.getCommentsByCurrentMember();
         List<Post> likedPosts = postService.getLikedPostsByCurrentMember();
         List<Integer> interestCategories = interestCategoryService.getDefaultInterestCategories(currentMember.getMemberId());
 
@@ -53,7 +53,7 @@ public class MyPageController {
         responseData.put("currentMember", currentMember.getMemberEmail());
         responseData.put("interestCategories", interestCategories);
         responseData.put("likedPosts", likedPosts);
-        responseData.put("myComments", myComments);
+        responseData.put("myComments", myReviews);
 
 
 

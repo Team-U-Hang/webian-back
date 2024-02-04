@@ -11,7 +11,7 @@ import uhang.uhang.posting.domain.entity.Post;
 @Data
 @Getter
 @Setter
-public class Comment {
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int commentId;

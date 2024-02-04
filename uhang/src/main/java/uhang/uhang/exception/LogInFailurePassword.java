@@ -1,4 +1,4 @@
-package uhang.uhang.comments.domain.exception;
+package uhang.uhang.exception;
 
 public class LogInFailurePassword extends RuntimeException{
 }

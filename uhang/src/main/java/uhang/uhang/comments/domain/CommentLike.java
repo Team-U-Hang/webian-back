@@ -1,7 +1,6 @@
 package uhang.uhang.comments.domain;
 
 import jakarta.persistence.*;
-import uhang.uhang.comments.domain.Comment;
 import uhang.uhang.login.domain.Member;
 
 public class CommentLike {
@@ -18,5 +17,5 @@ public class CommentLike {
 
     @ManyToOne
     @JoinColumn(name = "comment_id")//, insertable = false, updatable = false)
-    private Comment comment;
+    private Review review;
 }

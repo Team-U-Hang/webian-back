@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import uhang.uhang.comments.domain.exception.LogInRequiredException;
+import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.interest.service.InterestCategoryService;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import uhang.uhang.commentlike.domain.CommentLike;
 import uhang.uhang.commentlike.domain.repository.ClikeRepository;
 import uhang.uhang.commentlike.dto.ClikeDto;
-import uhang.uhang.comments.domain.Comment;
-import uhang.uhang.comments.domain.CommentRepository;
-import uhang.uhang.comments.domain.exception.LogInRequiredException;
+import uhang.uhang.comments.domain.Review;
+import uhang.uhang.comments.domain.ReviewRepository;
+import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class ClikeService {
 
     private final MemberRepository memberRepository;
-    private final CommentRepository commentRepository;
+    private final ReviewRepository commentRepository;
     private final ClikeRepository clikeRepository;
 
     public Member getCurrentMember() {
@@ -36,16 +36,16 @@ public class ClikeService {
     public void clikeinsert(ClikeDto clikeDto){
 
         Member member = getCurrentMember();
-        Comment comment = commentRepository.findByCommentId(clikeDto.getComment());
+        Review review = commentRepository.findByCommentId(clikeDto.getReview());
 
 
         // 이미 좋아요되어있으면 제거하고, 좋아요 없으면 만들기
-        Optional<CommentLike> findLike = clikeRepository.findByMemberAndComment(member, comment);
+        Optional<CommentLike> findLike = clikeRepository.findByMemberAndReview(member, review);
         if(findLike.isEmpty()){
 
             CommentLike commentLike = CommentLike.builder()
                     .member(member)
-                    .comment(comment)
+                    .review(review)
                     .build();
             clikeRepository.save(commentLike);
         } else clikeRepository.delete(findLike.get());
