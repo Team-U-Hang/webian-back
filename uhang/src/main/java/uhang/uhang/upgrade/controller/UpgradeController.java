@@ -3,9 +3,7 @@ package uhang.uhang.upgrade.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +11,7 @@ import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.upgrade.domain.Upgrade;
-import uhang.uhang.upgrade.domain.repository.UpgradeRepository;
+
 import uhang.uhang.upgrade.dto.MailDto;
 import uhang.uhang.upgrade.dto.UpgradeDto;
 import uhang.uhang.upgrade.service.MailService;

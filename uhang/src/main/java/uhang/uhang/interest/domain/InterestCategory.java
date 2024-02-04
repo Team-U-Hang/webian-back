@@ -10,13 +10,7 @@ import uhang.uhang.login.domain.Member;
 @Getter
 @Setter
 public class InterestCategory {
-/*
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-
- */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment
