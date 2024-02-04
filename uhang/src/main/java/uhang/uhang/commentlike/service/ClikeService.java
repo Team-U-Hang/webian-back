@@ -24,10 +24,9 @@ import static org.springframework.util.ClassUtils.isPresent;
 public class ClikeService {
 
     private final MemberRepository memberRepository;
+  //  private final ReviewRepository commentRepository;
     private final ReviewRepository reviewRepository;
     private final ClikeRepository clikeRepository;
-
-
 
     public Member getCurrentMember() {
 

@@ -21,14 +21,29 @@ import java.util.Optional;
 
 @Service
 public class ReviewService {
-
-    private final ReviewRepository reviewRepository;
-
     @Autowired
-    public ReviewService(ReviewRepository reviewRepository) {
+    private MemberRepository memberRepository;
+    @Autowired
+    private final ReviewRepository reviewRepository;
+    @Autowired
+    public ReviewService(ReviewRepository reviewRepository, MemberRepository memberRepository) {
         this.reviewRepository = reviewRepository;
+        this.memberRepository = memberRepository;
     }
 
+    public Member getCurrentMember() {
+        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(member == null) {
+            throw new LogInRequiredException();
+        }
+        return member;
+    }
+
+
+    public List<Review> getCommentsByCurrentMember() {
+        Member currentMember = getCurrentMember();
+        return reviewRepository.findByMember(currentMember);
+    }
     // 후기 등록
     public Review saveReview(Review review) {
         return reviewRepository.save(review);

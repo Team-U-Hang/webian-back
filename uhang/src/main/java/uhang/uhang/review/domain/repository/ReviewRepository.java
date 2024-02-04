@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
     public Review findByCommentId(long commentId);
+    List<Review> findByMember(Member member);
 
 //    List<Review> findByMember(Member member);
 }

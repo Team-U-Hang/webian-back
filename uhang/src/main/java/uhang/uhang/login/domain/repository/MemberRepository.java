@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import uhang.uhang.commentlike.dto.ClikeDto;
 import uhang.uhang.login.domain.Member;
 
 import java.util.List;
@@ -15,7 +16,6 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     public Member findByMemberEmail(String memberEmail);
     public boolean existsByMemberEmail(String email);
 
-    public Member findByMemberId(int memberId);
-
+    public Member findByMemberId(Long memberId);
 }
 

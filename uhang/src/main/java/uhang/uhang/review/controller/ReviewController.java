@@ -3,6 +3,7 @@ package uhang.uhang.review.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -42,4 +43,10 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
+//나의 후기
+    @GetMapping("/mypage/my-comments")
+    public List<Review> getCommentsByCurrentMember() {
+
+        return reviewService.getCommentsByCurrentMember();
+    }
     }

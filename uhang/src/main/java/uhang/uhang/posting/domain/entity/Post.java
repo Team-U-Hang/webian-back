@@ -1,9 +1,14 @@
 package uhang.uhang.posting.domain.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import uhang.uhang.login.domain.Member;
 //import uhang.uhang.login.domain.Member;
 
 import java.net.URI;
@@ -19,39 +24,26 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventId;
 
-    @Column(name = "event_title", nullable = false)
     private String eventTitle;
-
-    @Column(name = "event_time", nullable = false)
     private LocalTime eventTime;
-
-    @Column(name = "event_date", nullable = false)
+    @JsonFormat(pattern = "yyyy.MM.dd")
     private LocalDate eventDate;
-
-    @Column(name = "event_loc", nullable = false)
     private String eventLoc;
 
-    @Column(name = "event_type", nullable = false)
     private int eventType;
-
-    @Column(name = "event_text", nullable = false)
     private String eventText;
-
-    @Column(name = "image_url", nullable = false)
     private URI imageUrl;
-
-    @Column(name = "time_stamp", nullable = false)
     private LocalDateTime timeStamp;
-//    @ManyToOne
-//    @JoinColumn(name = "member_id")
-//    private Member member;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
     private Integer totalLike;
 
     // member builder에도 추가해주기
     @Builder
     public Post(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
                 String eventLoc, int eventType, String eventText, URI imageUrl,
-                LocalDateTime timeStamp, Integer totalLike) {
+                LocalDateTime timeStamp,Member member, Integer totalLike) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
         this.eventTime = eventTime;
