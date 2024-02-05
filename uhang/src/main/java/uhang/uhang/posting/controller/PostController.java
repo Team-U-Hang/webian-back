@@ -10,26 +10,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import uhang.uhang.commentlike.dto.ClikeDto;
 import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.interest.service.InterestCategoryService;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.posting.domain.entity.Post;
+import uhang.uhang.posting.dto.HeartDto;
 import uhang.uhang.posting.dto.PostDto;
+import uhang.uhang.posting.service.HeartPostService;
 import uhang.uhang.posting.service.PostService;
+import uhang.uhang.response.Response;
 
 import java.util.List;
+
+import static uhang.uhang.response.Message.COMMENT_LIKE_SUCCESS;
+import static uhang.uhang.response.Message.HEART_POST_SUCCESS;
+import static uhang.uhang.response.Response.success;
 
 @RestController
 public class PostController {
 
     private final PostService postService;
     private final InterestCategoryService interestCategoryService; // 추가된 부분
+    private final HeartPostService heartPostService;
     @Autowired
 
-    public PostController(PostService postService, InterestCategoryService interestCategoryService) {
+    public PostController(PostService postService, InterestCategoryService interestCategoryService, HeartPostService heartPostService) {
         this.postService = postService;
         this.interestCategoryService = interestCategoryService; // 추가된 부분
+        this.heartPostService=heartPostService;
     }
 
     @Autowired
@@ -52,9 +62,6 @@ public class PostController {
     }
 
 
-
-
-
     public Member getCurrentMember() {
 
         Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
@@ -63,6 +70,14 @@ public class PostController {
         }
         return member;
     }
+
+    //하고 싶은 이벤트 하트하기
+    @PostMapping("/heart/post")
+    public Response heartpost(@RequestBody HeartDto heartDto) {
+        heartPostService.heartpost(heartDto);
+        return success(HEART_POST_SUCCESS);
+    }
+
 
     @GetMapping(value ="/posting", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<Post>> getPostsByCategoryIds(
@@ -95,7 +110,6 @@ public class PostController {
     public List<Post> getLikedPostsByCurrentMember() {
         return postService.getLikedPostsByCurrentMember();
     }
-
 
 
     // 게시글 상세 정보 조회
