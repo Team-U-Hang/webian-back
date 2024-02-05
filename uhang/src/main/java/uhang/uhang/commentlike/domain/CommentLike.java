@@ -11,20 +11,22 @@ import static jakarta.persistence.FetchType.LAZY;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class CommentLike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int clikeId;
 
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne
     @JoinColumn(name="member_id")
     private Member member;
 
+//여기!!
 
-    @OneToOne(fetch = LAZY)
-    @JoinColumn(name="review_id")
+    @ManyToOne
+    @JoinColumn(name = "comment_id")
     private Review review;
+
+
+
 }

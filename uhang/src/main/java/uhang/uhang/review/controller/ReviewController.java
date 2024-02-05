@@ -42,6 +42,8 @@ public class ReviewController {
         List<Review> reviews = reviewService.getAllReviews();
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
+//여기 앤드포인트 바꾸어야함
+
 
 //나의 후기
     @GetMapping("/mypage/my-comments")
@@ -49,4 +51,12 @@ public class ReviewController {
 
         return reviewService.getCommentsByCurrentMember();
     }
+/*
+    @ResponseStatus(OK)
+    @GetMapping("/top3BestReviewIds")
+    public List<Integer> findTop3BestCommentIds() {
+        return reviewService.findTop3BestCommentIds();
     }
+
+     */
+}
