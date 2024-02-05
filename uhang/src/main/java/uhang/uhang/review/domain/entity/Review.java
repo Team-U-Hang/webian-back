@@ -6,6 +6,7 @@ import lombok.*;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
 
+import static jakarta.persistence.FetchType.EAGER;
 import static jakarta.persistence.FetchType.LAZY;
 
 @Entity(name = "comments")
@@ -19,7 +20,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer commentId;
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne(fetch = EAGER)
     @JoinColumn(name="event_id")
     private Post post;
 

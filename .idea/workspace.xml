@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e92e77de-a5a8-4d91-ae4f-6379661b7de2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/uhang.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/uhang.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/controller/ClikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/controller/ClikeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/domain/repository/ClikeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/domain/repository/ClikeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/dto/ClikeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/dto/ClikeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/service/ClikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/service/ClikeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/controller/ReviewController.java" afterDir="false" />
+    <list default="true" id="e92e77de-a5a8-4d91-ae4f-6379661b7de2" name="Changes" comment="중간 커밋!">
       <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/entity/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/dto/ReviewResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/service/ReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,35 +50,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build uhang.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.UhangApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;posting1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Dev/Study/SOLUX/Webian&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build uhang.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.UhangApplication.executor": "Run",
+    "git-widget-placeholder": "posting1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dev/Study/SOLUX/mainbranch",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="UhangApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="uhang.main" />
@@ -131,8 +115,17 @@
       <option name="presentableId" value="Default" />
       <updated>1707130943386</updated>
       <workItem from="1707130952799" duration="5231000" />
-      <workItem from="1707149433722" duration="3504000" />
+      <workItem from="1707149433722" duration="9114000" />
     </task>
+    <task id="LOCAL-00001" summary="중간 커밋!">
+      <option name="closed" value="true" />
+      <created>1707153216211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707153216211</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,5 +141,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="중간 커밋!" />
+    <option name="LAST_COMMIT_MESSAGE" value="중간 커밋!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/Auth/JwtFilter.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

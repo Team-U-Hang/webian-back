@@ -1,0 +1,51 @@
+Index: .idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: org.eclipse.angus:jakarta.mail:2.0.2\" type=\"java-imported\" external-system-id=\"GRADLE\">\r\n    <properties groupId=\"org.eclipse.angus\" artifactId=\"jakarta.mail\" version=\"2.0.2\" />\r\n    <CLASSES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.eclipse.angus/jakarta.mail/2.0.2/c73e4d70a62a1184eb01e989d6544082ee5e0362/jakarta.mail-2.0.2.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.eclipse.angus/jakarta.mail/2.0.2/7d62f19e4d920ea61ca53cac25a975b57a514959/jakarta.mail-2.0.2-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_2.xml b/.idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_2.xml
+--- a/.idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_2.xml	
++++ b/.idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_2.xml	
+@@ -2,7 +2,7 @@
+   <library name="Gradle: org.eclipse.angus:jakarta.mail:2.0.2" type="java-imported" external-system-id="GRADLE">
+     <properties groupId="org.eclipse.angus" artifactId="jakarta.mail" version="2.0.2" />
+     <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.eclipse.angus/jakarta.mail/2.0.2/c73e4d70a62a1184eb01e989d6544082ee5e0362/jakarta.mail-2.0.2.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/jakarta.mail/2.0.2/c73e4d70a62a1184eb01e989d6544082ee5e0362/jakarta.mail-2.0.2.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES>
+Index: .idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_2_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: org.springframework.boot:spring-boot-starter-mail:3.2.2\" type=\"java-imported\" external-system-id=\"GRADLE\">\r\n    <properties groupId=\"org.springframework.boot\" artifactId=\"spring-boot-starter-mail\" version=\"3.2.2\" />\r\n    <CLASSES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-mail/3.2.2/22caa13d58241fa44466edc2a2587992a203791e/spring-boot-starter-mail-3.2.2.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-mail/3.2.2/da38855633fe58ddb80777f604b7190a1d200b44/spring-boot-starter-mail-3.2.2-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_2_2.xml b/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_2_2.xml
+--- a/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_2_2.xml	
++++ b/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_2_2.xml	
+@@ -2,7 +2,7 @@
+   <library name="Gradle: org.springframework.boot:spring-boot-starter-mail:3.2.2" type="java-imported" external-system-id="GRADLE">
+     <properties groupId="org.springframework.boot" artifactId="spring-boot-starter-mail" version="3.2.2" />
+     <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-mail/3.2.2/22caa13d58241fa44466edc2a2587992a203791e/spring-boot-starter-mail-3.2.2.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-mail/3.2.2/22caa13d58241fa44466edc2a2587992a203791e/spring-boot-starter-mail-3.2.2.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES>
+Index: .idea/libraries/Gradle__org_springframework_spring_context_support_6_1_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: org.springframework:spring-context-support:6.1.3\" type=\"java-imported\" external-system-id=\"GRADLE\">\r\n    <properties groupId=\"org.springframework\" artifactId=\"spring-context-support\" version=\"6.1.3\" />\r\n    <CLASSES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.1.3/55ff73910c4851c37f6919a071453ddc40f7dc38/spring-context-support-6.1.3.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES>\r\n      <root url=\"jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.1.3/8dd69cd7e0e85a67b75f45dcaeef1b7704640917/spring-context-support-6.1.3-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_springframework_spring_context_support_6_1_3.xml b/.idea/libraries/Gradle__org_springframework_spring_context_support_6_1_3.xml
+--- a/.idea/libraries/Gradle__org_springframework_spring_context_support_6_1_3.xml	
++++ b/.idea/libraries/Gradle__org_springframework_spring_context_support_6_1_3.xml	
+@@ -2,7 +2,7 @@
+   <library name="Gradle: org.springframework:spring-context-support:6.1.3" type="java-imported" external-system-id="GRADLE">
+     <properties groupId="org.springframework" artifactId="spring-context-support" version="6.1.3" />
+     <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.1.3/55ff73910c4851c37f6919a071453ddc40f7dc38/spring-context-support-6.1.3.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.1.3/55ff73910c4851c37f6919a071453ddc40f7dc38/spring-context-support-6.1.3.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES>
