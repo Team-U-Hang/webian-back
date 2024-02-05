@@ -9,5 +9,7 @@ public class Message {
 
     public static String COMMENT_POST_SUCCESS="후기달기에 성공했습니다.";
 
+    public static String HEART_POST_SUCCESS="게시글 찜하기에 성공했습니다.";
+
 
 }

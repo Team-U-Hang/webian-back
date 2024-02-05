@@ -12,5 +12,12 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
     public Review findByCommentId(long commentId);
     List<Review> findByMember(Member member);
 
+    //comments!!
+    /*
+    @Query("SELECT r.commentId FROM comments r LEFT JOIN r.commentLikes cl GROUP BY r.commentId ORDER BY COUNT(cl) DESC")
+    List<Integer> findTop3BestCommentIds();
+
+     */
+
 //    List<Review> findByMember(Member member);
 }

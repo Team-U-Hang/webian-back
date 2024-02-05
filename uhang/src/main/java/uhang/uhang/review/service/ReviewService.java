@@ -1,5 +1,6 @@
 package uhang.uhang.review.service;
 
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,4 +60,16 @@ public class ReviewService {
         Optional<Review> optionalReview = reviewRepository.findById(commentId);
         return optionalReview.orElse(null);
     }
+
+    /*
+    public List<Integer> findTop3BestCommentIds() {
+        return reviewRepository.findTop3BestCommentIds();
+    }
+
+
+     */
+
+
+
+
 }
