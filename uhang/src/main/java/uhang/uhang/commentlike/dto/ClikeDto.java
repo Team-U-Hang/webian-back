@@ -6,5 +6,5 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClikeDto {
-    private long review;
+    private Integer review;
 }

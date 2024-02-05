@@ -3,6 +3,8 @@ package uhang.uhang.commentlike.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import uhang.uhang.commentlike.domain.CommentLike;
@@ -15,7 +17,10 @@ import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.posting.domain.entity.Post;
 import uhang.uhang.review.domain.entity.Review;
 import uhang.uhang.review.domain.repository.ReviewRepository;
+
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.springframework.util.ClassUtils.isPresent;
 
@@ -61,10 +66,14 @@ public class ClikeService {
         return clikeRepository.countByReview(review);
     }
 
-//    @Transactional
-//    public void countLike(ClikeDto clikeDto) {
-//        Comment comment = commentRepository.findByCommentId(clikeDto.getComment());
-//        Optional<CommentLike> countedlike = clikeRepository.countByComment(comment);
-//    }
+    // 좋아요 개수 기준으로 상위 3개 댓글 ID 조회
+    public List<Integer> findTop3CommentIdsByLikeCount() {
+        // Create Pageable with top 3
+        Pageable top3Pageable = PageRequest.of(0, 3);
+
+        // Retrieve Comment IDs
+        return clikeRepository.findTop3CommentIdsByOrderByLikeCountDesc(top3Pageable);
+    }
+
 
 }

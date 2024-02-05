@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/WebianBack.iml" filepath="$PROJECT_DIR$/.idea/WebianBack.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/uhang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/uhang.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/webian-back.iml" filepath="$PROJECT_DIR$/.idea/webian-back.iml" />
     </modules>
   </component>
 </project>

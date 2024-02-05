@@ -6,25 +6,21 @@ import lombok.*;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
 
-import java.net.URI;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
+import static jakarta.persistence.FetchType.EAGER;
 import static jakarta.persistence.FetchType.LAZY;
 
 @Entity(name = "comments")
-@Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Setter
+
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int commentId;
+    private Integer commentId;
 
-    @ManyToOne
+    @ManyToOne(fetch = EAGER)
     @JoinColumn(name="event_id")
     private Post post;
 
@@ -37,6 +33,9 @@ public class Review {
     @ManyToOne
     @JoinColumn(name="member_id")
     private Member member;
+
+
+
 
 
 }

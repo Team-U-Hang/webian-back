@@ -7,8 +7,6 @@ import org.hibernate.annotations.ColumnDefault;
 import org.springframework.aot.hint.MemberCategory;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity (name="member")
 @Builder
