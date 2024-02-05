@@ -51,7 +51,7 @@ public class ReviewService {
     }
     // 후기 등록
     @Transactional
-    public Long reviewSave(Long eventId, ReviewRequestDTO reviewRequestDTO) {
+    public Integer reviewSave(Long eventId, ReviewRequestDTO reviewRequestDTO) {
         Review review = new Review();
         review.setCommentContent(reviewRequestDTO.getCommentContent());
         review.setReviewRate(reviewRequestDTO.getReviewRate());
@@ -89,7 +89,7 @@ public class ReviewService {
                 .build();
     }
     //댓글별 좋아요 개수 조회할때, 어떤 댓글인지 알기위해 작성한 메서드
-    public Review findById(Long commentId) {
+    public Review findById(Integer commentId) {
         Optional<Review> optionalReview = reviewRepository.findById(commentId);
         return optionalReview.orElse(null);
     }

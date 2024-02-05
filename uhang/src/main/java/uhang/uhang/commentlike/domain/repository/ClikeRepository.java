@@ -18,5 +18,5 @@ public interface ClikeRepository extends JpaRepository<CommentLike, Integer> {
             "FROM commentlike cl " +
             "GROUP BY cl.review.commentId " +
             "ORDER BY COUNT(cl.review.commentId) DESC")
-    List<Long> findTop3CommentIdsByOrderByLikeCountDesc(Pageable pageable);
+    List<Integer> findTop3CommentIdsByOrderByLikeCountDesc(Pageable pageable);
 }

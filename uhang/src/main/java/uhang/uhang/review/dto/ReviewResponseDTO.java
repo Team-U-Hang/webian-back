@@ -9,7 +9,7 @@ import uhang.uhang.review.domain.entity.Review;
 @Builder
 public class ReviewResponseDTO {
 
-    private Long commentId;
+    private Integer commentId;
     private String commentContent;
-    private Integer reviewRate;
+    private int reviewRate;
 }

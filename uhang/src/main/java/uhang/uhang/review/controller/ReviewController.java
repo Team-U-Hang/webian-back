@@ -24,7 +24,7 @@ import static org.springframework.http.HttpStatus.OK;
 import static uhang.uhang.response.Message.COMMENT_LIKE_SUCCESS;
 import static uhang.uhang.response.Message.COMMENT_POST_SUCCESS;
 import static uhang.uhang.response.Response.success;
-@RequestMapping("/post/{eventId}")
+@RestController
 public class ReviewController {
     private final ReviewService reviewService;
     private final PostService postService;
@@ -53,21 +53,21 @@ public class ReviewController {
 //    }
 
    // 후기 등록
-   @PostMapping("/postingReview")
-   public Long reviewSave(@PathVariable(name = "eventId") Long eventId, @RequestBody ReviewRequestDTO reviewRequestDTO) {
+   @PostMapping("/post/{eventId}/postingReview")
+   public Integer reviewSave(@PathVariable(name = "eventId") Long eventId, @RequestBody ReviewRequestDTO reviewRequestDTO) {
        return reviewService.reviewSave(eventId,reviewRequestDTO);
    }
 
 
      // 후기 조회
-    @GetMapping("/gettingReview")
+    @GetMapping("/post/{eventId}/gettingReview")
     public List<ReviewResponseDTO> getReviewsByPostId(@PathVariable(name = "eventId") Long eventId) {
         return reviewService.getReviews(eventId);
     }
 
 
     //나의 후기
-    @GetMapping("/mypage/my-comments")
+    @GetMapping("mypage/my-comments")
     public List<Review> getCommentsByCurrentMember() {
 
         return reviewService.getCommentsByCurrentMember();

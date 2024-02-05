@@ -17,7 +17,7 @@ import static jakarta.persistence.FetchType.LAZY;
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long commentId;
+    private Integer commentId;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name="event_id")
