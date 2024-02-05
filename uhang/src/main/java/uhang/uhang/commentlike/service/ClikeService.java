@@ -29,7 +29,7 @@ import static org.springframework.util.ClassUtils.isPresent;
 public class ClikeService {
 
     private final MemberRepository memberRepository;
-  //  private final ReviewRepository commentRepository;
+
     private final ReviewRepository reviewRepository;
     private final ClikeRepository clikeRepository;
 
@@ -67,7 +67,7 @@ public class ClikeService {
     }
 
     // 좋아요 개수 기준으로 상위 3개 댓글 ID 조회
-    public List<Long> findTop3CommentIdsByLikeCount() {
+    public List<Integer> findTop3CommentIdsByLikeCount() {
         // Create Pageable with top 3
         Pageable top3Pageable = PageRequest.of(0, 3);
 

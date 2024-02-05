@@ -23,10 +23,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReviewService {
-
-    private final ReviewRepository reviewRepository;
-    private final PostRepository postRepository;
-    private final MemberRepository memberRepository;
+    @Autowired
+    private  ReviewRepository reviewRepository;
+    @Autowired
+    private  PostRepository postRepository;
+    @Autowired
+    private  MemberRepository memberRepository;
 
 
     @Autowired
@@ -50,8 +52,19 @@ public class ReviewService {
         return reviewRepository.findByMember(currentMember);
     }
     // 후기 등록
+    //이 부분!
+    // 후기 등록
+    public Review saveReview(Review review) {
+        return reviewRepository.save(review);
+    }
+
+    // 후기 조회
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
     @Transactional
-    public Long reviewSave(Long eventId, ReviewRequestDTO reviewRequestDTO) {
+    public int reviewSave(Long eventId, ReviewRequestDTO reviewRequestDTO) {
         Review review = new Review();
         review.setCommentContent(reviewRequestDTO.getCommentContent());
         review.setReviewRate(reviewRequestDTO.getReviewRate());
@@ -89,7 +102,7 @@ public class ReviewService {
                 .build();
     }
     //댓글별 좋아요 개수 조회할때, 어떤 댓글인지 알기위해 작성한 메서드
-    public Review findById(Long commentId) {
+    public Review findById(int commentId) {
         Optional<Review> optionalReview = reviewRepository.findById(commentId);
         return optionalReview.orElse(null);
     }

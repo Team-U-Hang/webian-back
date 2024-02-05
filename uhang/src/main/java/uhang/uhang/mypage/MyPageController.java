@@ -24,22 +24,26 @@ import java.util.Map;
 @RequestMapping("/mypage")
 public class MyPageController {
 
-    private final ReviewService reviewService;
-    private final PostService postService;
-    private final InterestCategoryService interestCategoryService;
+
+    @Autowired
+    private   ReviewService reviewService;
+    @Autowired
+    private   PostService postService;
+    @Autowired
+    private   InterestCategoryService interestCategoryService;
     @Autowired
     private MemberRepository memberRepository;
 
+
     @Autowired
-    public MyPageController(
-            ReviewService reviewService,
-            PostService postService,
-            InterestCategoryService interestCategoryService
-    ) {
+    public MyPageController(MemberRepository memberRepository, ReviewService reviewService, PostService postService, InterestCategoryService interestCategoryService) {
+        this.memberRepository = memberRepository;
         this.reviewService = reviewService;
         this.postService = postService;
         this.interestCategoryService = interestCategoryService;
     }
+
+
 
     @GetMapping("/my-data")
     public ResponseEntity<Map<String, Object>> getMyData() {

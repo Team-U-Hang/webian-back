@@ -33,15 +33,6 @@ public class Member {
     private int writeAuth;
 
 
-    //yejin
-  //  public Member(int memberId) {
-    //    this.memberId = memberId;
-    //}
-    /*
-    @OneToMany(mappedBy = "member")
-    private List<MemberCategory> memberProducts= new ArrayList<>();;
-*/
-
     public interface MemberDetails extends UserDetails {
         Long getMemberId();
     }
