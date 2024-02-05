@@ -22,7 +22,7 @@ public class PostRequestDto {
     private int eventType;
     private String eventText;
     private URI imageUrl;
-    private Member member;
+    private Long memberId;
     private LocalDateTime timeStamp;
 
     public Post toEntity() {
@@ -34,7 +34,6 @@ public class PostRequestDto {
                 .eventType(eventType)
                 .eventText(eventText)
                 .imageUrl(imageUrl)
-                .member(member)
                 .timeStamp(timeStamp)
                 .build();
     }

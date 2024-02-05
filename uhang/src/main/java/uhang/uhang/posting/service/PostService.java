@@ -38,12 +38,22 @@ public class PostService {
         this.memberRepository = memberRepository;
     }
 
+    public Member getCurrentMember() {
+        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(member == null) {
+            throw new LogInRequiredException();
+        }
+        return member;
+    }
+
     // 이벤트 게시물 등록 -> 이벤트 아이디값 넘기기
     @Transactional
     public Long savePost(PostRequestDto postDto) {
 
         Post post = postRepository.save(postDto.toEntity());
         Member member = getCurrentMember();
+
+        post.setMember(member);
 
         return post.getEventId();
     }
@@ -77,19 +87,11 @@ public class PostService {
         return postRepository.findByEventTypeIn(eventTypes, pageable);
     }
 
-    public Post savePost(Post post) {
-        return postRepository.save(post);
+
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
     }
 
-
-    public Member getCurrentMember() {
-        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-        if(member == null) {
-            throw new LogInRequiredException();
-        }
-        return member;
-    }
-  //  public List<Post> getPosts
 
     public List<Post> getLikedPostsByCurrentMember() {
         Member currentMember = getCurrentMember();

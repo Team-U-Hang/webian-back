@@ -67,7 +67,7 @@ public class ClikeService {
     }
 
     // 좋아요 개수 기준으로 상위 3개 댓글 ID 조회
-    public List<Integer> findTop3CommentIdsByLikeCount() {
+    public List<Long> findTop3CommentIdsByLikeCount() {
         // Create Pageable with top 3
         Pageable top3Pageable = PageRequest.of(0, 3);
 

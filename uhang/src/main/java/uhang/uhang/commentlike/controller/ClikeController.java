@@ -35,7 +35,7 @@ public class ClikeController {
 //    @GetMapping("/commentlike/show") get 요청 보내기 comment 보여주는 get 요청에 총 좋아요 개수 합쳐주세욥!!
     @ResponseStatus(OK)
     @GetMapping("/countByReview/{commentId}")
-    public Integer getCountByReview(@PathVariable int commentId) {
+    public Integer getCountByReview(@PathVariable Long commentId) {
         // Review 객체를 얻어옴
         Review review = reviewService.findById(commentId);
 
@@ -47,13 +47,13 @@ public class ClikeController {
     @GetMapping("/top3")
     public ResponseEntity<List<Review>> getTop3CommentsByLikeCount() {
         // 가져온 댓글 ID 리스트
-        List<Integer> top3CommentIds = clikeService.findTop3CommentIdsByLikeCount();
+        List<Long> top3CommentIds = clikeService.findTop3CommentIdsByLikeCount();
 
         // 댓글 내용을 담을 리스트
         List<Review> top3Comments = new ArrayList<>();
 
         // 댓글 ID를 기반으로 각 댓글을 가져와 리스트에 추가
-        for (Integer commentId : top3CommentIds) {
+        for (Long commentId : top3CommentIds) {
             Review comment = reviewService.findById(commentId);
             top3Comments.add(comment);
         }

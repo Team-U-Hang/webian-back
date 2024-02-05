@@ -22,6 +22,7 @@ import java.util.List;
 
 @Entity(name = "posts")
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access =  AccessLevel.PROTECTED)
 public class Post {

@@ -15,14 +15,14 @@ public class ReviewDTO {
     private Post post;
     private int reviewRate;
     private String commentContent;
-    private int commentId;
+    private Long commentId;
     private Long memberId;
     private int eventId;
 
     // 생성자, 게터, 세터 생략
 
     @Builder
-    public ReviewDTO(int commentId, String commentContent, Long memberId, int eventId) {
+    public ReviewDTO(Long commentId, String commentContent, Long memberId, int eventId) {
         this.commentId = commentId;
         this.commentContent = commentContent;
         this.memberId = memberId;

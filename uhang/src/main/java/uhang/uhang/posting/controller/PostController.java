@@ -88,7 +88,7 @@ public class PostController {
     }
 
 
-    @GetMapping(value ="/posting", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value ="/customposting", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<Post>> getPostsByCategoryIds(
 
             @RequestParam(required = false) List<Integer> eventType,
@@ -100,9 +100,6 @@ public class PostController {
 
         Member member = getCurrentMember();
         {
-
-
-
             Page<Post> postsPage;
             if (eventType == null || eventType.isEmpty()) {
                 // eventType이 비어있으면 관심분야가 없다고 간주하여 디폴트로 설정된 categoryId를 가져옴
