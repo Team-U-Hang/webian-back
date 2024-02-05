@@ -3,6 +3,7 @@ package uhang.uhang.posting.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
 
 import java.net.URI;
@@ -21,6 +22,7 @@ public class PostRequestDto {
     private int eventType;
     private String eventText;
     private URI imageUrl;
+    private Member member;
     private LocalDateTime timeStamp;
 
     public Post toEntity() {
@@ -32,6 +34,7 @@ public class PostRequestDto {
                 .eventType(eventType)
                 .eventText(eventText)
                 .imageUrl(imageUrl)
+                .member(member)
                 .timeStamp(timeStamp)
                 .build();
     }

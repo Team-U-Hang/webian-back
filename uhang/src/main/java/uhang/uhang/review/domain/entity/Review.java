@@ -9,15 +9,15 @@ import uhang.uhang.posting.domain.entity.Post;
 import static jakarta.persistence.FetchType.LAZY;
 
 @Entity(name = "comments")
-@Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Setter
+
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int commentId;
+    private Long commentId;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name="event_id")
@@ -27,7 +27,7 @@ public class Review {
     private String commentContent;
 
     @Column
-    private Integer reviewRate;
+    private Long reviewRate;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name="member_id")

@@ -2,6 +2,7 @@ package uhang.uhang.posting.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
 import uhang.uhang.review.dto.ReviewResponseDTO;
 
@@ -28,22 +29,6 @@ public class PostResponseDto {
     // private Member member;
     private final Integer totalLike;
     private List<ReviewResponseDTO> reviews;
-
-    @Builder
-    public PostResponseDto(Post post) {
-        this.eventId = post.getEventId();
-        this.eventTitle = post.getEventTitle();
-        this.eventTime = post.getEventTime();
-        this.eventDate = post.getEventDate();
-        this.eventLoc = post.getEventLoc();
-        this.eventType = post.getEventType();
-        this.eventText = post.getEventText();
-        this.imageUrl = post.getImageUrl();
-        this.timeStamp = post.getTimeStamp();
-        // this.member = member;
-        this.totalLike = post.getTotalLike();
-        this.reviews = post.getReviews().stream().map(ReviewResponseDTO::new).collect(Collectors.toList());
-    }
 
 }
 

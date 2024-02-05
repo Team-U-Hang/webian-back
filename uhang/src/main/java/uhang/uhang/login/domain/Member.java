@@ -13,7 +13,7 @@ import org.hibernate.annotations.ColumnDefault;
 @Setter
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int memberId;
+    private Long memberId;
 
     @Column(updatable = false, length = 8)
     private String studNum;

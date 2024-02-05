@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db-uhang.c9862quyunza.ap-northeast-2.rds.amazonaws.com" uuid="b4a43c7e-a63c-4787-bbe7-24a784a7720d">
+    <data-source source="LOCAL" name="db-uhang.c9862quyunza.ap-northeast-2.rds.amazonaws.com" uuid="68559423-c219-4a12-8395-56014171c4bc">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
