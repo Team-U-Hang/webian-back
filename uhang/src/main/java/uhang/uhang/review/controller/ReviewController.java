@@ -1,7 +1,9 @@
 package uhang.uhang.review.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +21,9 @@ import uhang.uhang.review.service.ReviewService;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.OK;
-
-@RestController
+import static uhang.uhang.response.Message.COMMENT_LIKE_SUCCESS;
+import static uhang.uhang.response.Message.COMMENT_POST_SUCCESS;
+import static uhang.uhang.response.Response.success;
 @RequestMapping("/post/{eventId}")
 public class ReviewController {
     private final ReviewService reviewService;
@@ -38,6 +41,7 @@ public class ReviewController {
 
     // 후기 등록
     /*@PostMapping("/post/{id}/reviews")
+    @PostMapping("/post/reviews")
     public Review createPost(@RequestBody Review review) {
         return reviewService.saveReview(review);
     }*/
@@ -61,4 +65,19 @@ public class ReviewController {
         return reviewService.getReviews(eventId);
     }
 
+
+    //나의 후기
+    @GetMapping("/mypage/my-comments")
+    public List<Review> getCommentsByCurrentMember() {
+
+        return reviewService.getCommentsByCurrentMember();
+    }
+/*
+    @ResponseStatus(OK)
+    @GetMapping("/top3BestReviewIds")
+    public List<Integer> findTop3BestCommentIds() {
+        return reviewService.findTop3BestCommentIds();
+    }
+
+     */
 }

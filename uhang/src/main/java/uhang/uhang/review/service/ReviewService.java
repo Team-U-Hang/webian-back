@@ -16,6 +16,7 @@ import uhang.uhang.review.domain.repository.ReviewRepository;
 import uhang.uhang.review.dto.ReviewRequestDTO;
 import uhang.uhang.review.dto.ReviewResponseDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -42,20 +43,12 @@ public class ReviewService {
         }
         return member;
     }
-//
-//    //이벤트 id 받아오기
-//    public PostResponseDto getPostById(Long postId) {
-//        Post post = postRepository.findById(postId).orElse(null);
-//        assert post != null;
-//
-//        return convertToDTO(post);
-//    }
-//    private PostResponseDto convertToDTO(Post post) {
-//        return PostResponseDto.builder()
-//                .eventId(post.getEventId())
-//                .build();
-//    }
 
+
+    public List<Review> getCommentsByCurrentMember() {
+        Member currentMember = getCurrentMember();
+        return reviewRepository.findByMember(currentMember);
+    }
     // 후기 등록
     @Transactional
     public Long reviewSave(Long eventId, ReviewRequestDTO reviewRequestDTO) {
@@ -100,4 +93,15 @@ public class ReviewService {
         Optional<Review> optionalReview = reviewRepository.findById(commentId);
         return optionalReview.orElse(null);
     }
+    /*
+    public List<Integer> findTop3BestCommentIds() {
+        return reviewRepository.findTop3BestCommentIds();
+    }
+
+
+     */
+
+
+
+
 }

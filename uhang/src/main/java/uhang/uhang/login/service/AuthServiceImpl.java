@@ -13,6 +13,7 @@ import uhang.uhang.Auth.JwtProvider;
 import uhang.uhang.Auth.TokenDto;
 import uhang.uhang.exception.LogInFailureEmail;
 import uhang.uhang.exception.LogInFailurePassword;
+import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.login.dto.loginDto;
@@ -30,6 +31,15 @@ public class AuthServiceImpl implements AuthService{
     private PasswordEncoder passwordEncoder;
     @Autowired
     private AuthenticationManagerBuilder authenticationManagerBuilder;
+
+    public Member getCurrentMember() {
+
+        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(member==null) {
+            throw new LogInRequiredException();
+        }
+        return member;
+    }
 
     @Transactional
     @Override

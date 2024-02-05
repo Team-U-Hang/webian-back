@@ -1,4 +1,5 @@
 package uhang.uhang.exception;
 
-public class LogInRequiredException extends RuntimeException{
+
+public class LogInRequiredException extends RuntimeException {
 }

@@ -14,7 +14,7 @@ public class ReviewRequestDTO {
     private Long eventId;
     private Long memberId;
     private String commentContent;
-    private Long reviewRate;
+    private Integer reviewRate;
 
 }
 

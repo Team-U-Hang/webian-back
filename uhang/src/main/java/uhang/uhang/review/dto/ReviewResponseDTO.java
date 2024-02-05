@@ -11,5 +11,5 @@ public class ReviewResponseDTO {
 
     private Long commentId;
     private String commentContent;
-    private Long reviewRate;
+    private Integer reviewRate;
 }

@@ -7,6 +7,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Service;
 import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
@@ -16,6 +18,7 @@ import uhang.uhang.posting.domain.repository.PostLikeRepository;
 import uhang.uhang.posting.domain.repository.PostRepository;
 import uhang.uhang.posting.dto.PostRequestDto;
 import uhang.uhang.posting.dto.PostResponseDto;
+import uhang.uhang.posting.dto.PostDto;
 
 import java.util.List;
 
@@ -34,13 +37,6 @@ public class PostService {
         this.postLikeRepository = postLikeRepository;
         this.memberRepository = memberRepository;
     }
-    public Member getCurrentMember() {
-        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-        if (member == null) {
-            throw new LogInRequiredException();
-        }
-        return member;
-    }
 
     // 이벤트 게시물 등록 -> 이벤트 아이디값 넘기기
     @Transactional
@@ -52,10 +48,6 @@ public class PostService {
         return post.getEventId();
     }
 
-
-    public Page<Post> getPostsByEventTypes(List<Integer> eventTypes, Pageable pageable) {
-        return postRepository.findByEventTypeIn(eventTypes, pageable);
-    }
 
     // 이벤트 게시물 상세 조회 -> 이벤트 아이디값 받아와서
     public PostResponseDto getPostById(Long postId) {
@@ -79,6 +71,25 @@ public class PostService {
                 .totalLike(post.getTotalLike())
                 .build();
     }
+
+
+    public Page<Post> getPostsByEventTypes(List<Integer> eventTypes, Pageable pageable) {
+        return postRepository.findByEventTypeIn(eventTypes, pageable);
+    }
+
+    public Post savePost(Post post) {
+        return postRepository.save(post);
+    }
+
+
+    public Member getCurrentMember() {
+        Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(member == null) {
+            throw new LogInRequiredException();
+        }
+        return member;
+    }
+  //  public List<Post> getPosts
 
     public List<Post> getLikedPostsByCurrentMember() {
         Member currentMember = getCurrentMember();

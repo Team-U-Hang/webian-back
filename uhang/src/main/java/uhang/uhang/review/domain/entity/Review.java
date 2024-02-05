@@ -27,11 +27,14 @@ public class Review {
     private String commentContent;
 
     @Column
-    private Long reviewRate;
+    private Integer reviewRate;
 
-    @ManyToOne(fetch = LAZY)
+    @ManyToOne
     @JoinColumn(name="member_id")
     private Member member;
+
+
+
 
 
 }
