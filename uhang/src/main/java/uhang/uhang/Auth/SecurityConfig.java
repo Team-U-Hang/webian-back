@@ -73,6 +73,9 @@ public class SecurityConfig extends WebSecurityConfiguration {
                                 config.setAllowedMethods(
                                         List.of("*")
                                 );
+                                config.setAllowedHeaders(
+                                        List.of("*")
+                                );
                                 return config;
                             };
                             c.configurationSource(source);

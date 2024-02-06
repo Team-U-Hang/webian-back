@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 //멤버의 관심분야 + 이벤트 목록
+//@CrossOrigin(origins="*", allowedHeaders="*")
 @RestController
 @RequestMapping("/post-list")
 public class PostListController {
@@ -37,6 +39,7 @@ public class PostListController {
         this.postService = postService;
         this.interestCategoryService = interestCategoryService;
     }
+
 
     @GetMapping("/category")
     public ResponseEntity<Map<String, Object>> getPosts() {
