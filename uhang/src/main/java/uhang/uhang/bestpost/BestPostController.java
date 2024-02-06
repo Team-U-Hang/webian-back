@@ -20,7 +20,7 @@ public class BestPostController {
 
     @GetMapping("/top3/posts")
     public ResponseEntity<List<Post>> getTopThreePosts() {
-        List<Post> topThreePosts = heartPostService.findTopThreePosts();
+        List<Post>  topThreePosts = heartPostService.findTopThreePosts();
         return ResponseEntity.ok(topThreePosts);
     }
 }
