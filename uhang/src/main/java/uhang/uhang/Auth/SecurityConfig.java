@@ -50,7 +50,6 @@ public class SecurityConfig extends WebSecurityConfiguration {
         };
     }
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -107,7 +106,6 @@ public class SecurityConfig extends WebSecurityConfiguration {
                         .requestMatchers(AUTH_WHITE_LIST).permitAll()
                         .anyRequest().authenticated()
                 );
-
 
         return http.build();
     }

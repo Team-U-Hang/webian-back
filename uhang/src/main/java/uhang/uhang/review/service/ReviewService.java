@@ -28,7 +28,7 @@ public class ReviewService {
     private final PostRepository postRepository;
     private final MemberRepository memberRepository;
 
-
+    //생성자 생성
     @Autowired
     public ReviewService(ReviewRepository reviewRepository, PostRepository postRepository, MemberRepository memberRepository) {
         this.reviewRepository = reviewRepository;
@@ -36,6 +36,7 @@ public class ReviewService {
         this.memberRepository = memberRepository;
     }
 
+    //현재 로그인한 멤버 가져오기( member 객체 )
     public Member getCurrentMember() {
         Member member = memberRepository.findByMemberEmail(SecurityContextHolder.getContext().getAuthentication().getName());
         if (member == null) {
@@ -44,7 +45,7 @@ public class ReviewService {
         return member;
     }
 
-
+    //
     public List<Review> getCommentsByCurrentMember() {
         Member currentMember = getCurrentMember();
         return reviewRepository.findByMember(currentMember);

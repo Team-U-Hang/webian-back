@@ -12,6 +12,7 @@ import java.util.List;
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     public Review findByCommentId(Long commentId);
 
+    //find
     List<Review> findByPostEventId(Long eventId);
     List<Review> findByMember(Member member);
 

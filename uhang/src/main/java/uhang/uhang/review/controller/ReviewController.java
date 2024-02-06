@@ -24,8 +24,10 @@ import static org.springframework.http.HttpStatus.OK;
 import static uhang.uhang.response.Message.COMMENT_LIKE_SUCCESS;
 import static uhang.uhang.response.Message.COMMENT_POST_SUCCESS;
 import static uhang.uhang.response.Response.success;
+
 @RequestMapping("/post/{eventId}")
 public class ReviewController {
+
     private final ReviewService reviewService;
     private final PostService postService;
     private final ReviewRepository reviewRepository;

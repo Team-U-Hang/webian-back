@@ -53,11 +53,6 @@ public class PostListController {
         responseData.put("AllPostList", posts);
 
 
-
-
-
-
-
         return new ResponseEntity<>(responseData, HttpStatus.OK);
     }
 

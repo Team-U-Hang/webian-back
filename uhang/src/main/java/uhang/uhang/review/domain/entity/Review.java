@@ -33,8 +33,4 @@ public class Review {
     @JoinColumn(name="member_id")
     private Member member;
 
-
-
-
-
 }
