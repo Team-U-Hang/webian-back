@@ -37,7 +37,7 @@ public class Post {
     private LocalDate eventDate;
     private String eventLoc;
 
-    private int eventType;
+    private Integer eventType;
     private String eventText;
     private URI imageUrl;
     private LocalDateTime timeStamp;
@@ -71,7 +71,7 @@ public class Post {
 
     @Builder
     public Post(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
-                String eventLoc, int eventType, String eventText, URI imageUrl,
+                String eventLoc, Integer eventType, String eventText, URI imageUrl,
                 LocalDateTime timeStamp, Member member, Integer totalLike) {
         this.eventId = eventId;
         this.eventTitle = eventTitle;
