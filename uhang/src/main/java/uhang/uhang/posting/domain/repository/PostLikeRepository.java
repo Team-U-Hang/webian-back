@@ -3,6 +3,7 @@ package uhang.uhang.posting.domain.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
+import org.springframework.data.jpa.repository.Query;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
 import uhang.uhang.posting.domain.entity.PostLike;
@@ -21,4 +22,12 @@ public interface PostLikeRepository extends JpaRepository<PostLike, Integer> {
     public Integer countByPost(Post post);
 
     Optional<PostLike> findByMemberAndPost(Member member, Post post);
+
+    //bestpost 를 위해 추가된 부분
+    @Query
+            ("SELECT pl.post.eventId, COUNT(DISTINCT pl.member.memberId) " +
+            "FROM postlike pl " +
+            "GROUP BY pl.post.eventId " +
+            "ORDER BY COUNT(DISTINCT pl.member.memberId) DESC")
+    List<Object[]> findTopThreeEventIdsWithUniqueMemberCounts();
 }
