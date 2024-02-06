@@ -15,4 +15,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     public Post findByEventId(long eventId);
 //    List<Review> findByMember(Member member);
+
+    //bestpost 를 위해 추가된 부분
+    List<Post> findByEventIdIn(List<Long> eventIds);
+    // 여기까지 추가된 부분
 }
