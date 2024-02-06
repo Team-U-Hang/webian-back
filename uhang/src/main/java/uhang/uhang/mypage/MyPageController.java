@@ -50,7 +50,8 @@ public class MyPageController {
         List<Integer> interestCategories = interestCategoryService.getDefaultInterestCategories(currentMember.getMemberId());
 
         Map<String, Object> responseData = new HashMap<>();
-        responseData.put("currentMember", currentMember.getMemberEmail());
+        responseData.put("MemberEmail", currentMember.getMemberEmail());
+   //    responseData.put("MemberStudNum", currentMember.getMemberEmail());
         responseData.put("interestCategories", interestCategories);
         responseData.put("likedPosts", likedPosts);
         responseData.put("myComments", myReviews);
