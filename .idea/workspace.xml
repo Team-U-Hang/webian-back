@@ -4,8 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e92e77de-a5a8-4d91-ae4f-6379661b7de2" name="Changes" comment="중간 커밋!">
-      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/review/domain/entity/Review.java" afterDir="false" />
+    <list default="true" id="e92e77de-a5a8-4d91-ae4f-6379661b7de2" name="Changes" comment="지민_이벤트타입 배열로">
+      <change afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/bestpost/BestPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65/storage_v2/_src_/schema/UhangTest.ecv3Og.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ec859c4-2130-4a0c-8f00-e7b8b68ffc65/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b/storage_v2/_src_/schema/UhangTest.ecv3Og.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd679f9-5b5b-42cc-a567-543b4b63c08b/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fc032c77-a900-40eb-a7ea-511400247723.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fc032c77-a900-40eb-a7ea-511400247723.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/uhang.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/uhang.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-05__11_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-05__11_49__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-05__11_49__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024-02-05__11_49__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/controller/ClikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/commentlike/controller/ClikeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/entity/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/entity/PostLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/entity/PostLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/repository/PostLikeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/repository/PostLikeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/domain/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/HeartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/HeartDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/dto/PostResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/service/HeartPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/service/HeartPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/posting/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/postlist/PostListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uhang/src/main/java/uhang/uhang/postlist/PostListController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,35 +117,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build uhang.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.UhangApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;posting1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Dev/Study/SOLUX/mainbranch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build uhang.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.UhangApplication.executor": "Run",
+    "git-widget-placeholder": "feature/fixing3",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dev/Study/SOLUX/fixing3/uhang/src/main/java/uhang/uhang",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\Study\SOLUX\fixing3\uhang\src\main\java\uhang\uhang" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="UhangApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="uhang.main" />
@@ -148,6 +189,7 @@
       <updated>1707130943386</updated>
       <workItem from="1707130952799" duration="5231000" />
       <workItem from="1707149433722" duration="9114000" />
+      <workItem from="1707240689801" duration="9666000" />
     </task>
     <task id="LOCAL-00001" summary="중간 커밋!">
       <option name="closed" value="true" />

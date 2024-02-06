@@ -16,7 +16,10 @@ import uhang.uhang.posting.domain.repository.PostRepository;
 import uhang.uhang.posting.dto.HeartDto;
 import uhang.uhang.review.domain.entity.Review;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -52,4 +55,19 @@ public class HeartPostService {
         } else postLikeRepository.delete(findLike.get());
     }
 
+    //bestpost 를 위해 추가된 부분
+    @Transactional
+    public List<Post> findTopThreePosts() {
+        List<Object[]> topThreeEvents = postLikeRepository.findTopThreeEventIdsWithUniqueMemberCounts();
+
+        // 상위 3개의 이벤트 ID를 추출
+        List<Long> topThreeEventIds = topThreeEvents.stream()
+                .limit(3)
+                .map(array -> (Long) array[0])
+                .collect(Collectors.toList());
+
+        // 상위 3개의 이벤트 ID에 해당하는 포스트 엔티티를 검색하여 반환
+        return postRepository.findByEventIdIn(topThreeEventIds);
+    }
+// 여기까지 추가된 부분
 }

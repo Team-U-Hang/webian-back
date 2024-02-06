@@ -5,14 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import uhang.uhang.login.domain.Member;
-import uhang.uhang.review.domain.entity.Review;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
-import uhang.uhang.login.domain.Member;
-//import uhang.uhang.login.domain.Member;
 
 import java.net.URI;
 import java.time.LocalDate;
@@ -24,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor(access =  AccessLevel.PROTECTED)
 public class Post {
 
@@ -37,7 +30,12 @@ public class Post {
     private LocalDate eventDate;
     private String eventLoc;
 
-    private int eventType;
+    @OneToMany
+    @JoinColumn(name = "postcategory_id")
+    List<PostCategory> postCategory;
+
+    private Integer eventType;
+
     private String eventText;
     private URI imageUrl;
     private LocalDateTime timeStamp;
@@ -69,21 +67,21 @@ public class Post {
 ////        this.member = member;
 //        this.totalLike = totalLike;
 
-    @Builder
-    public Post(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
-                String eventLoc, int eventType, String eventText, URI imageUrl,
-                LocalDateTime timeStamp, Member member, Integer totalLike) {
-        this.eventId = eventId;
-        this.eventTitle = eventTitle;
-        this.eventTime = eventTime;
-        this.eventDate = eventDate;
-        this.eventLoc = eventLoc;
-        this.eventType = eventType;
-        this.eventText = eventText;
-        this.imageUrl = imageUrl;
-        this.timeStamp = timeStamp;
-//        this.member = member;
-//        this.reviews = reviews;
+//    @Builder
+//    public Post(Long eventId, String eventTitle, LocalTime eventTime, LocalDate eventDate,
+//                String eventLoc, List<Category> eventType, String eventText, URI imageUrl,
+//                LocalDateTime timeStamp, Member member, Integer totalLike) {
+//        this.eventId = eventId;
+//        this.eventTitle = eventTitle;
+//        this.eventTime = eventTime;
+//        this.eventDate = eventDate;
+//        this.eventLoc = eventLoc;
+//        this.eventType = eventType;
+//        this.eventText = eventText;
+//        this.imageUrl = imageUrl;
+//        this.timeStamp = timeStamp;
+////        this.member = member;
+////        this.reviews = reviews;
+////    }
 //    }
-    }
 }

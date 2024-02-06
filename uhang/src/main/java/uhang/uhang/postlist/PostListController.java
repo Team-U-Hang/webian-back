@@ -47,7 +47,6 @@ public class PostListController {
 
 
         List<Integer> interestCategories = interestCategoryService.getDefaultInterestCategories(currentMember.getMemberId());
-
         List<Post> posts = postService.getAllPosts();
 
 

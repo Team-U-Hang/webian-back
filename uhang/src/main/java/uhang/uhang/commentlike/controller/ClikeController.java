@@ -32,7 +32,7 @@ public class ClikeController {
         return success(COMMENT_LIKE_SUCCESS);
     }
 
-//    @GetMapping("/commentlike/show") get 요청 보내기 comment 보여주는 get 요청에 총 좋아요 개수 합쳐주세욥!!
+    //    @GetMapping("/commentlike/show") get 요청 보내기
     @ResponseStatus(OK)
     @GetMapping("/countByReview/{commentId}")
     public Integer getCountByReview(@PathVariable Integer commentId) {
@@ -41,7 +41,7 @@ public class ClikeController {
 
         // countByReview 메서드 호출
         return clikeService.getCountByReview(review);
-}
+    }
 
     // 좋아요 개수 기준으로 상위 3개 댓글 ID 조회 API
     @GetMapping("/top3")

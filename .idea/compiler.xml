@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
@@ -10,10 +11,5 @@
         <module name="uhang.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="uhang" target="17" />
-      <module name="uhang.main" target="17" />
-      <module name="uhang.test" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

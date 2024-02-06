@@ -1,8 +1,8 @@
 package uhang.uhang.posting.dto;
 
 import lombok.*;
-//import uhang.uhang.login.domain.Member;
 import uhang.uhang.posting.domain.entity.Post;
+import uhang.uhang.posting.domain.entity.PostCategory;
 
 import java.net.URI;
 import java.time.LocalDate;

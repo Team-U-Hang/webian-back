@@ -7,33 +7,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import uhang.uhang.exception.LogInRequiredException;
-import uhang.uhang.login.domain.Member;
-import uhang.uhang.login.domain.repository.MemberRepository;
-import uhang.uhang.posting.domain.entity.Post;
-import uhang.uhang.posting.dto.PostRequestDto;
-import uhang.uhang.posting.dto.PostResponseDto;
-import uhang.uhang.posting.service.PostService;
-import uhang.uhang.review.dto.ReviewResponseDTO;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
-import uhang.uhang.commentlike.dto.ClikeDto;
 import uhang.uhang.exception.LogInRequiredException;
 import uhang.uhang.interest.service.InterestCategoryService;
 import uhang.uhang.login.domain.Member;
 import uhang.uhang.login.domain.repository.MemberRepository;
 import uhang.uhang.posting.domain.entity.Post;
 import uhang.uhang.posting.dto.HeartDto;
-import uhang.uhang.posting.dto.PostDto;
+import uhang.uhang.posting.dto.PostRequestDto;
+import uhang.uhang.posting.dto.PostResponseDto;
 import uhang.uhang.posting.service.HeartPostService;
 import uhang.uhang.posting.service.PostService;
 import uhang.uhang.response.Response;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import static uhang.uhang.response.Message.COMMENT_LIKE_SUCCESS;
 import static uhang.uhang.response.Message.HEART_POST_SUCCESS;
 import static uhang.uhang.response.Response.success;
 
@@ -43,8 +33,8 @@ public class PostController {
     private final PostService postService;
     private final InterestCategoryService interestCategoryService; // 추가된 부분
     private final HeartPostService heartPostService;
-    @Autowired
 
+    @Autowired
     public PostController(PostService postService, InterestCategoryService interestCategoryService, HeartPostService heartPostService) {
         this.postService = postService;
         this.interestCategoryService = interestCategoryService; // 추가된 부분
@@ -57,16 +47,24 @@ public class PostController {
 
     // 이벤트 게시글 등록
     @PostMapping("posting")
-    public Long createPost(@RequestBody PostRequestDto postDto) {
-        return postService.savePost(postDto);
-
+    public Long createPost(@RequestBody PostRequestDto postDto,
+                           @RequestParam(value = "categories")List<Long> categories) {
+        return postService.savePost(postDto, categories);
     }
-
 
     // 이벤트 게시물 상세정보 조회
     @GetMapping("post/{eventId}")
-    public PostResponseDto getPost(@PathVariable(name="eventId") Long eventId) {
-        return postService.getPostById(eventId);
+    public ResponseEntity<Map<String, Object>> getPost(@PathVariable(name="eventId") Long eventId) {
+        List<Long> postCategories = postService.getPostCategories(eventId);
+
+        PostResponseDto post = postService.getPostById(eventId);
+
+
+        Map<String, Object> responseData = new HashMap<>();
+        responseData.put("postCategories", postCategories);
+        responseData.put("postDetail", post);
+
+        return new ResponseEntity<>(responseData, HttpStatus.OK);
     }
 
 
